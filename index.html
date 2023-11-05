@@ -11,7 +11,12 @@
     <header>
         <h1>Subnet Mask and CIDR Calculator</h1>
     </header>
-   <!-- <button onclick="toggleDarkMode()">Toggle Dark Mode</button> -->
+   <!-- <button class="toggle-dark-mode" onclick="toggleDarkMode()">Toggle Dark Mode</button> -->
+   <label class="toggle">
+    <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+    <span class="slider"></span>
+</label>
+
 
     <div class="container">
         <h2>Calculate Subnet Mask and CIDR Block</h2>
@@ -241,6 +246,10 @@
             </tr>
         </table>
     </div>
+    <footer>
+        <p>Crafted for YOU! ❤️, Happy Networking, and Scaling!</p>
+    </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>

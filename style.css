@@ -184,13 +184,148 @@ margin-top: 10px;
 
 
 
-        /* Default (Light) Mode */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .dark-mode .container {
+            background-color: #444;
+            color: #fff;
+        }
+        
+        .dark-mode input {
+            background-color: #222; /* Dark background color for input */
+            color: #fff; /* Light text color for input */
+        }
+        
+        .dark-mode input::placeholder {
+            color: #aaa; /* Light placeholder text color for input */
+        }
+        
+/* CSS for the "Toggle Dark Mode" button */
+button.toggle-dark-mode {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-image: url('Web/toggle.png'); /* Replace with the path to your toggle button icon */
+    background-size: cover;
+}
+
+button.toggle-dark-mode:hover {
+    filter: brightness(1.2); /* Add a hover effect to make it slightly brighter */
+}
+
+/* CSS for the "Toggle Dark Mode" switch */
+.toggle {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #0072b1;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background-color: #fff;
+}
+
+/* Hover effect */
+.toggle:hover input + .slider:before {
+    background-color: #0072b1;
+}
+/* CSS for the "Toggle Dark Mode" switch */
+.toggle {
+    position: fixed;
+    top: 10px; /* Adjust the top position to your preference */
+    right: 10px; /* Adjust the right position to your preference */
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .container {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode .result-container {
+    background-color: #333; /* You can change this color to your preference */
+    color: #fff;
+}
+
+/* Add styles for the footer */
+footer {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 18px;
+    margin: 0;
+}
+
+
+/* Rest of the CSS styles remain the same */
+
+/*
+
 :root {
     --background-color: #fff;
     --text-color: #000;
 }
 
-/* Dark Mode */
 .dark-mode {
     --background-color: #333;
     --text-color: #fff;
@@ -200,13 +335,10 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
-/* Other styles for light mode */
-
-/* Dark mode styles */
 .dark-mode .container {
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
-/* Other dark mode styles */
+*/
 

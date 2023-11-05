@@ -175,7 +175,7 @@ document.getElementById("ipWithCidr").addEventListener("keydown", function (even
     }
 });
 
-/*
+
 
 function toggleDarkMode() {
     const body = document.body;
@@ -201,4 +201,4 @@ function toggleDarkMode() {
     }
 }
 
-*/
+
