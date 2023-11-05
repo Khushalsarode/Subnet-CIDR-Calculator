@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="Web\third64.ico" type="image/x-icon">
+    <title>Subnet Mask and CIDR Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <header>
+        <h1>Subnet Mask and CIDR Calculator</h1>
+    </header>
+   <!-- <button onclick="toggleDarkMode()">Toggle Dark Mode</button> -->
+
+    <div class="container">
+        <h2>Calculate Subnet Mask and CIDR Block</h2>
+        <label for="ipAddress">Enter IP Address:</label>
+        <input type="text" id="ipAddress" placeholder="e.g., 192.168.1.0" onkeydown="if (event.key === 'Enter') calculate()">
+        <label for="subnetMask">Subnet Mask (e.g., 255.255.255.0):</label>
+        <input type="text" id="subnetMask" placeholder="e.g., 255.255.255.0" onkeydown="if (event.key === 'Enter') calculate()">
+        <button onclick="calculate()">Calculate</button>
+        <div class="error-container">
+            <div class="error-title">Error</div>
+            <div class="error-content" id="error"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Result</h2>
+        <div class="result-container">
+            <div class="result-title">Result</div>
+            <div class="result-content" id="result"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Calculate IP Range Details</h2>
+        <label for="ipWithCidr">Enter IP Address with CIDR:</label>
+        <input type="text" id="ipWithCidr" placeholder="e.g., 139.21.182.62/30" onkeydown="if (event.key === 'Enter') calculateIpRange()">
+        <button id="calculateIpRangeButton" onclick="calculateIpRange()">Calculate</button>
+    </div>
+
+    <div class="container">
+        <h2>Result</h2>
+        <div class="result-container">
+            <div class="result-title">Result</div>
+            <div class="result-content" id="ipResult"></div>
+        </div>
+    </div>
+    
+    <!-- Add the Prefix Size, Network Mask, and Usable Hosts table here -->
+    <div class="container">
+        <h2>Prefix Size, Network Mask, and Usable Hosts per Subnet</h2>
+        <table id="prefixTable">
+            <tr>
+                <th>Prefix Size</th>
+                <th>Network Mask</th>
+                <th>Usable Hosts per Subnet</th>
+            </tr>
+            <tr>
+                <td>/1</td>
+                <td>128.0.0.0</td>
+                <td>2,147,483,646</td>
+            </tr>
+            <!-- Add more rows for other prefixes -->
+            <tr>
+                <td>/2</td>
+                <td>192.0.0.0</td>
+                <td>1,073,741,822</td>
+            </tr>
+            <tr>
+                <td>/3</td>
+                <td>224.0.0.0</td>
+                <td>536,870,910</td>
+            </tr>
+            <tr>
+                <td>/4</td>
+                <td>240.0.0.0</td>
+                <td>268,435,454</td>
+            </tr>
+            <tr>
+                <td>/5</td>
+                <td>248.0.0.0</td>
+                <td>134,217,726</td>
+            </tr>
+            <tr>
+                <td>/6</td>
+                <td>252.0.0.0</td>
+                <td>67,108,862</td>
+            </tr>
+            <tr>
+                <td>/7</td>
+                <td>254.0.0.0</td>
+                <td>33,554,430</td>
+            </tr>
+            <!-- Class A -->
+            </table>
+
+            <tr>
+                <td style="font-style: normal; font-weight: bold; color: #0072b1;"><h4>Class A</h4></td>
+            </tr>
+            <table id="prefixTable">
+            <tr>
+                <td>/8</td>
+                <td>255.0.0.0</td>
+                <td>16,777,214</td>
+            </tr>
+            <tr>
+                <td>/9</td>
+                <td>255.128.0.0</td>
+                <td>8,388,606</td>
+            </tr>
+            <tr>
+                <td>/10</td>
+                <td>255.192.0.0</td>
+                <td>4,194,302</td>
+            </tr>
+            <tr>
+                <td>/11</td>
+                <td>255.224.0.0</td>
+                <td>2,097,150</td>
+            </tr>
+            <tr>
+                <td>/12</td>
+                <td>255.240.0.0</td>
+                <td>1,048,574</td>
+            </tr>
+            <tr>
+                <td>/13</td>
+                <td>255.248.0.0</td>
+                <td>524,286</td>
+            </tr>
+            <tr>
+                <td>/14</td>
+                <td>255.252.0.0</td>
+                <td>262,142</td>
+            </tr>
+            <tr>
+                <td>/15</td>
+                <td>255.254.0.0</td>
+                <td>131,070</td>
+            </tr>
+            </table>
+            <!-- Class B -->
+            <tr>
+                <td style="font-style: normal; font-weight: bold; color: #0072b1;"><h4>Class B</h4></td>
+            </tr>
+            <table id="prefixTable">
+            <tr>
+                <td>/16</td>
+                <td>255.255.0.0</td>
+                <td>65,534</td>
+            </tr>
+            <tr>
+                <td>/17</td>
+                <td>255.255.128.0</td>
+                <td>32,766</td>
+            </tr>
+            <tr>
+                <td>/18</td>
+                <td>255.255.192.0</td>
+                <td>16,382</td>
+            </tr>
+            <tr>
+                <td>/19</td>
+                <td>255.255.224.0</td>
+                <td>8,190</td>
+            </tr>
+            <tr>
+                <td>/20</td>
+                <td>255.255.240.0</td>
+                <td>4,094</td>
+            </tr>
+            <tr>
+                <td>/21</td>
+                <td>255.255.248.0</td>
+                <td>2,046</td>
+            </tr>
+            <tr>
+                <td>/22</td>
+                <td>255.255.252.0</td>
+                <td>1,022</td>
+            </tr>
+            <tr>
+                <td>/23</td>
+                <td>255.255.254.0</td>
+                <td>510</td>
+            </tr>
+            </table>
+            <!-- Class C -->
+            <tr>
+                <td style="font-style: normal; font-weight: bold; color: #0072b1;"><h4>Class C</h4></td>
+            </tr>
+            <table id="prefixTable">
+
+            <tr>
+                <td>/24</td>
+                <td>255.255.255.0</td>
+                <td>254</td>
+            </tr>
+            <tr>
+                <td>/25</td>
+                <td>255.255.255.128</td>
+                <td>126</td>
+            </tr>
+            <tr>
+                <td>/26</td>
+                <td>255.255.255.192</td>
+                <td>62</td>
+            </tr>
+            <tr>
+                <td>/27</td>
+                <td>255.255.255.224</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>/28</td>
+                <td>255.255.255.240</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>/29</td>
+                <td>255.255.255.248</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>/30</td>
+                <td>255.255.255.252</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>/31</td>
+                <td>255.255.255.254</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>/32</td>
+                <td>255.255.255.255</td>
+                <td>0</td>
+            </tr>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

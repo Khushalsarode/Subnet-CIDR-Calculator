@@ -1,0 +1,212 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0072b1;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #0072b1;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #005684;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #0072b1;
+    color: #fff;
+}
+
+#error {
+    color: red;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+h2 {
+    color: #0072b1;
+}
+
+/* Added new style for the prefix table */
+#prefixTable {
+    margin-top: 20px;
+}
+
+#prefixTable th, #prefixTable td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+#prefixTable th {
+    background-color: #0072b1;
+    color: #fff;
+}
+    /* Add this style for the result and error sections in the "Result" containers */
+.result-container {
+margin-top: 20px;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color: #f7f7f7;
+}
+
+.result-title {
+color: #0072b1;
+font-size: 18px;
+margin-bottom: 10px;
+}
+
+.result-content {
+font-size: 16px;
+margin-top: 10px;
+}
+
+.error-container {
+margin-top: 20px;
+padding: 12px;
+border: 1px solid #ff0000;
+border-radius: 5px;
+background-color: #ffeeee;
+}
+
+.error-title {
+color: #ff0000;
+font-size: 18px;
+margin-bottom: 10px;
+}
+
+.error-content {
+font-size: 16px;
+margin-top: 10px;
+}
+/* Updated style for the Prefix Size, Network Mask, and Usable Hosts table */
+#prefixTable {
+    margin-top: 20px;
+}
+
+#prefixTable th, #prefixTable td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+#prefixTable th {
+    background-color: #0072b1;
+    color: #fff;
+}
+        /* Add this style for the result and error sections in the "Result" containers */
+        .result-container {
+            margin-top: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f7f7f7;
+        }
+
+        .result-title {
+            color: #0072b1;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .result-content {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .error-container {
+            margin-top: 20px;
+            padding: 12px;
+            border: 1px solid #ff0000;
+            border-radius: 5px;
+            background-color: #ffeeee;
+        }
+
+        .error-title {
+            color: #ff0000;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .error-content {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+
+
+        /* Default (Light) Mode */
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+}
+
+/* Dark Mode */
+.dark-mode {
+    --background-color: #333;
+    --text-color: #fff;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+/* Other styles for light mode */
+
+/* Dark mode styles */
+.dark-mode .container {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Other dark mode styles */
+
